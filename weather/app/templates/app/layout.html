@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <title>Weather App</title>
+</head>
+<body>
+    <h1 class="center-align">Weather App</h1>
+    <div class="container" style="height:100vh">
+        <form action="" method="get">
+            {% csrf_token %}
+            <div class="input-field col s6">
+                <input id="city" type="text" class="validate" name="city">
+                <label for="city">City..</label>
+            </div>
+            <input type="submit" value="Search" class="btn">
+        </form>
+        <div>
+            {% block content %}
+                
+            {% endblock %}
+        </div>
+    </div>
+    <footer class="page-footer blue-grey darken-1">
+            <div class="container">
+              <div class="row">
+                <div class="col l6 s12">
+                  <h5 class="white-text">The Weather App</h5>
+                  <p class="grey-text text-lighten-4">
+                      This app is created with Python Django.<br>
+                      And It is powered by OpenWeatherMap.
+                  </p>
+                  <p>
+                      <h5>Licenses</h5>
+                        <a class="grey-text text-lighten-4 left" href="https://raw.githubusercontent.com/django/django/master/LICENSE">Django</a><br>
+                        <a class="grey-text text-lighten-4 left" href="http://www.python.org/download/releases/2.0.1/license/">Python</a><br>
+                        <a class="grey-text text-lighten-4 left" href="#!">OpenUserMap</a><br>
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="footer-copyright">
+              <div class="container">
+              © 2018 Avinaba Dutta
+              </div>
+            </div>
+          </footer>
+</body>
+</html>

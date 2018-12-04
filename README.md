@@ -2,7 +2,8 @@
 
 #### version(1.0.0)
  
-### Requirements.txt
+### Requirements
+- Python 3.6+
 - Django
 - requests
 ```shell
