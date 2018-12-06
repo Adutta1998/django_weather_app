@@ -3,6 +3,7 @@
     {% if weather_data %}
         <div class="card blue-grey darken-1">
             <div class="card-content white-text">
+                    <a href="/pin/{{weather_data.name}}" class="btn right blue darken-2">Pin To Home</a>
                     <p><h4>{{weather_data.name}}</h4>
                         ({{weather_data.coord.lon}},{{weather_data.coord.lat}})
                     </p>
@@ -16,7 +17,23 @@
             </div>
         </div>
     {% else %}
-
+       {% for city in data %}
+        <div class="card blue-grey darken-1">
+            <div class="card-content white-text">
+                    <a href="/unpin/{{city.name}}" class="btn right skyblue darken-2">unpin</a>
+                    <p><h4>{{city.name}}</h4>
+                        ({{city.coord.lon}},{{city.coord.lat}})
+                    </p>
+                    <h2>{{city.main.temp}}°C</h2>
+                    <img src="https://openweathermap.org/img/w/{{city.weather.0.icon}}.png" alt="weather">
+                    <p>{{city.weather.0.main}} <br> {{city.weather.0.description}}</p>
+                    
+            </div>
+            <!-- <div class="card-action">
+                <a href="/" class="btn red darken-2">Home</a>
+            </div> -->
+        </div>
+        {% endfor %}
     {% endif %}
 {% endblock %}
 
